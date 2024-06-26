@@ -2,7 +2,7 @@ package com.example.demo.entity;
 
 public class Crewinfo {
 
-	private String operationType;
+	private String operationType = "UPDATE";
 	private String crewid;
 	private Crew crewDetails;
 
