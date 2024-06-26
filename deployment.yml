@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: updatecrew
-          image: 265083127752.dkr.ecr.ap-south-1.amazonaws.com/ecr-update-crew-repo:latest
+          image: 265083127752.dkr.ecr.ap-south-1.amazonaws.com/ecr-update-crew-repo
           imagePullPolicy: Always
           ports:
-            - containerPort: 8080
+            - containerPort: 8090
