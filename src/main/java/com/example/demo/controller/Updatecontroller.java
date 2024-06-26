@@ -45,7 +45,7 @@ public class Updatecontroller {
         String jsonRequest = mapper.writeValueAsString(requestDTO);
         System.out.println(jsonRequest);
         HttpEntity<ProcessedRequestDTO> request = new HttpEntity<>(requestDTO);
-        ResponseEntity<Response> response = restTemplate.exchange(url, HttpMethod.PUT,request, Response.class);
+        ResponseEntity<Response> response = restTemplate.exchange(url, HttpMethod.POST,request, Response.class);
         System.out.println(response);
 
         return response;
