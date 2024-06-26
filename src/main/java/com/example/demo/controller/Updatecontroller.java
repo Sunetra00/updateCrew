@@ -40,7 +40,7 @@ public class Updatecontroller {
 	
 	@PutMapping("/updateCrew")
     public ResponseEntity<Response> UpdateCrew(@RequestBody Crew crew) throws JsonProcessingException {
-        
+        System.out.println(crew);
 		ProcessedRequestDTO requestDTO = updateresttemplateservice.UpdateCrew(crew);
         String jsonRequest = mapper.writeValueAsString(requestDTO);
         System.out.println(jsonRequest);
@@ -51,6 +51,7 @@ public class Updatecontroller {
         return response;
     }
 	
+
 	/*
 	 * private ProcessedRequestDTO updateRequest(Crew crew){ ProcessedRequestDTO
 	 * requestDTO = new ProcessedRequestDTO();
