@@ -44,7 +44,7 @@ public class Updatecontroller {
 		ProcessedRequestDTO requestDTO = updateresttemplateservice.UpdateCrew(crew);
         String jsonRequest = mapper.writeValueAsString(requestDTO);
         System.out.println(jsonRequest);
-        HttpEntity<ProcessedRequestDTO> request = new HttpEntity<>(requestDTO);
+        HttpEntity request = new HttpEntity<>(requestDTO);
         ResponseEntity<Response> response = restTemplate.exchange(url, HttpMethod.POST,request, Response.class);
         System.out.println(response);
 
