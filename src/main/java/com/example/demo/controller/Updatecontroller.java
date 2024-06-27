@@ -29,19 +29,11 @@ public class Updatecontroller {
 	public Updateresttemplateservice updateresttemplateservice;
 	
 	String url = "http://dynamodbupdater/ddboperation";
-
-	
-//	@PutMapping("/updateCrew")
-//	public void updateEmployee(@RequestBody Crew  crew) {
-		
-	//	updateresttemplateservice.updateCrew(crew);
-		
-	//}
 	
 	@PutMapping("/updateCrew")
     public ResponseEntity<Response> UpdateCrew(@RequestBody Crew crew) throws JsonProcessingException {
         System.out.println(crew);
-		ProcessedRequestDTO requestDTO = updateresttemplateservice.UpdateCrew(crew);
+		ProcessedRequestDTO requestDTO = updateRequest(crew);
         String jsonRequest = mapper.writeValueAsString(requestDTO);
         System.out.println(jsonRequest);
         HttpEntity request = new HttpEntity<>(requestDTO);
@@ -52,11 +44,12 @@ public class Updatecontroller {
     }
 	
 
-	/*
-	 * private ProcessedRequestDTO updateRequest(Crew crew){ ProcessedRequestDTO
-	 * requestDTO = new ProcessedRequestDTO();
-	 * requestDTO.setCrewid(crew.getCrewId());
-	 * requestDTO.setOperationType("UPDATE"); requestDTO.setCrewDTO(crew); return
-	 * requestDTO; }
-	 */
+
+	 private ProcessedRequestDTO updateRequest(Crew crew){ ProcessedRequestDTO
+	  requestDTO = new ProcessedRequestDTO();
+	  requestDTO.setCrewid(crew.getCrewId());
+	  requestDTO.setOperationType("UPDATE"); requestDTO.setCrewDTO(crew); return
+	  requestDTO;
+	}
+
 }
